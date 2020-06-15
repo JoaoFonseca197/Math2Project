@@ -27,6 +27,8 @@ def Play (screen):
         if pressedKey[pygame.K_s]:
             #Calls the MoveBack function
             ship.MoveBack()
+        if pressedKey[pygame.K_d]:
+            ship.RotateRight()
         if pressedKey[pygame.K_a]:
             ship.RotateLeft()
 

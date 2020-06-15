@@ -23,14 +23,14 @@ def main():
     #Color of the screen
     screen.fill((0,0,20))
 
-    
+
 
 
     while(True):
 
         #Checks for events
         for event in pygame.event.get():
-            
+
             if(event.type == pygame.QUIT):
                 exit()
 
@@ -39,7 +39,11 @@ def main():
         mp = pygame.mouse.get_pos()
 
         #Checks if mouse got pressed
-        mb = pygame.mouse.get_pressed()    
+        mb = pygame.mouse.get_pressed()
+
+        # fps = pygame.time.Clock.get_fps()
+        # print(fps)
+
 
         screen.fill((0,0,20))
 
