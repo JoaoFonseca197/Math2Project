@@ -1,6 +1,7 @@
 import pygame
 from pygame.math import Vector2
 from Spaceship import *
+import time
 
 def Play (screen):
     #Color of the screen
@@ -8,6 +9,8 @@ def Play (screen):
 
     #Creates the spaceship
     ship = Ship()
+
+
 
     while(True):
         #Checks for events
