@@ -24,6 +24,8 @@ def Play (screen):
         if pressedKey[pygame.K_s]:
             #Calls the MoveBack function
             ship.MoveBack()
+        if pressedKey[pygame.K_a]:
+            ship.RotateLeft()
 
         #Cleans the screen 
         screen.fill((0,0,20))
@@ -35,6 +37,7 @@ def Play (screen):
         """If we don't use this function the system will only render when we
         press keys, but with this function we will do all the movement"""
         ship.Update()
+        #ship.UpdateRot()
 
 
         pygame.display.flip()
