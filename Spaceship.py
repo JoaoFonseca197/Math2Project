@@ -46,6 +46,7 @@ class Ship:
     """For some reason you can't sum Vector soo you need to use the position.x
     """
     def Update(self, BlackHole):
+        #if condition to check if the centre of the ship is inside of the circles
         if(BlackHole.magnitude <= BlackHole.radius):
             self.acceleration = 0.01 * BlackHole.normdirection
         
@@ -76,6 +77,7 @@ class Ship:
         self.acceleration = (self.force/self.mass) * self.direction
         self.velocity = self.velocity + (self.acceleration * 0.2)
     
+    #function to rotate the ship to the right side
     def RotateRight(self):
         relPos = self.frontVertice - self.position
         self.frontVertice = Vector2.rotate(relPos, 1)+ self.position
@@ -86,6 +88,7 @@ class Ship:
         relPos = self.rightVertice - self.position
         self.rightVertice = Vector2.rotate(relPos, 1)+ self.position
     
+    #function to rotate the ship to the left side
     def RotateLeft(self):
         relPos = self.frontVertice - self.position
         self.frontVertice = Vector2.rotate(relPos, -1)+ self.position
