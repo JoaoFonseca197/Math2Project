@@ -19,7 +19,7 @@ class Ship:
         self.mass = 20
 
         #Force "added" when pressed the key 
-        self.force = 0.5
+        self.force = 0.1
 
         self.frontVertice = Vector2(740,400)
 

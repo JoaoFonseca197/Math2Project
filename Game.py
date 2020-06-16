@@ -11,7 +11,8 @@ def Play (screen):
     #Creates the spaceship
     ship = Ship()
     #Creates the blackholes
-    hole = BlackHole()
+    hole1 = BlackHole(200,200,100)
+    hole2 = BlackHole(800,200,150)
 
 
 
@@ -40,13 +41,16 @@ def Play (screen):
         #Calls the render function
         """Needs to pass the screen as argument or else the system doesn't
         know where to print"""
-        hole.Render(screen)
+        hole1.Render(screen)
+        hole2.Render(screen)
         ship.Render(screen)
         #Constant update
         """If we don't use this function the system will only render when we
         press keys, but with this function we will do all the movement"""
-        hole.attraction(ship)
-        ship.Update(hole)
+        hole1.attraction(ship)
+        hole2.attraction(ship)
+        ship.Update(hole1)
+        ship.Update(hole2)
         #ship.UpdateRot()
 
 
