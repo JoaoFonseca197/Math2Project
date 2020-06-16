@@ -1,6 +1,7 @@
 import pygame
 from pygame.math import Vector2
 from Spaceship import *
+from BlackHole import *
 import time
 
 def Play (screen):
@@ -9,6 +10,8 @@ def Play (screen):
 
     #Creates the spaceship
     ship = Ship()
+    #Creates the blackholes
+    hole = BlackHole()
 
 
 
@@ -37,11 +40,13 @@ def Play (screen):
         #Calls the render function
         """Needs to pass the screen as argument or else the system doesn't
         know where to print"""
+        hole.Render(screen)
         ship.Render(screen)
         #Constant update
         """If we don't use this function the system will only render when we
         press keys, but with this function we will do all the movement"""
-        ship.Update()
+        hole.attraction(ship)
+        ship.Update(hole)
         #ship.UpdateRot()
 
 

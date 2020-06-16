@@ -1,5 +1,6 @@
 import pygame
 from pygame.math import *
+from BlackHole import *
 import math
 
 
@@ -18,7 +19,7 @@ class Ship:
         self.mass = 20
 
         #Force "added" when pressed the key 
-        self.force = 5
+        self.force = 0.5
 
         self.frontVertice = Vector2(740,400)
 
@@ -44,8 +45,13 @@ class Ship:
     #Updates the position of the sheep
     """For some reason you can't sum Vector soo you need to use the position.x
     """
-    def Update(self):
-        self.acceleration = 0 * self.direction
+    def Update(self, BlackHole):
+        if(BlackHole.magnitude <= BlackHole.radius):
+            self.acceleration = 0.01 * BlackHole.normdirection
+        
+        else:
+            self.acceleration = 0 * self.direction
+        
         self.velocity = self.velocity + (self.acceleration * 0.2) 
         self.position = self.position + (self.velocity* 0.2) 
         self.frontVertice = self.frontVertice + (self.velocity* 0.2) 
